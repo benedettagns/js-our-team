@@ -31,13 +31,20 @@ const team = [
     },
   ];
 
-let membriHtml = document.querySelector('.team-card'); 
+let membriHtml = document.querySelector('.team-container'); 
 
 for (let i = 0; i < team.length; i++) {
     const componenti = team[i];
-
-    for (let key in componenti) {
-        const output = `${componenti[key]}`
-        membriHtml.innerHTML += output
-    }
+    membriHtml.innerHTML += `<div class="team-card">
+    <div class="card-image">
+      <img
+        src="${team.image}"
+        alt=""/>
+    </div>
+    <div class="card-text">
+      <h3>${team.name}</h3>
+      <p>${team.role}</p>
+    </div>
+  </div>`
+  console.log(componenti);
 };
